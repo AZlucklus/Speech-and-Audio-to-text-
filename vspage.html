@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'hi.css' %}">
+    <link rel="stylesheet" href="{% static 'vspage.css' %}">
+    <style>
+
+        .sec{
+            height: 300px;
+            align-items: center;
+        }
+        #hd{
+            height: 30px;
+        }
+        #my{
+			
+			background-color: rgb(21, 131, 125);
+			height: 200px;
+			width: 800px;	
+		}
+        #my p{
+			font-size: larger;
+			font-weight: 400;
+			color:white;
+		}
+        body{
+            background-image: url({% static 'img/ki3.jpg' %});
+        }
+    </style>
+</head>
+<body>
+    <h1 id="top" style="color: blue;">ARABIC SPEECH TO TEXT</h1><hr>
+   
+  <div class="logo"><button  id="his">History</button></div><br>
+    <div class="#container">
+
+        <div class="choice">
+            <h2 style="color: white;">Change Languages : 
+                <span id="lg">
+                    <select name="lang">
+                        <option value="en">English</option>
+                        <option value="ar">Arabic</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                       
+                    </select><br>
+                </span>
+            </h2>
+        </div>
+        
+        
+        <div class="sec">
+           <center>
+            <div class="inner">
+                <div class="sub">
+                    <div class="hd">
+                        <h2>Display Text Translated
+                        <span>
+                        
+                             <input type="button" value="Clear">
+                        </span>
+                    </h2>
+                    </div>
+                  <h1 id="my">
+                        {% if error_msg  %}
+                       <p><b> {{ error_msg  }}</b> </p>
+                        {% endif %}
+                        {% if text2 %}
+                       <p><b> {{ text2 }}</b> </p>
+                        {% endif %}
+                        
+                        {% if text %}
+                        <p><b>   {{ text }}</b> </p>
+                        {% endif %}
+                    </h1>
+                    <form
+                     method="" action=" vsreg/" >
+                       {% csrf_token %}
+                       
+                    
+                       <input type="submit"  value="Recognition">
+                    </form>
+
+                    <button onclick="window.location.href='{% url 'txt2vs'%}' "> Audio to Speech</a> </button> 
+                </div>
+            </div>
+        </center>
+        </div>
+</body>
+</html>

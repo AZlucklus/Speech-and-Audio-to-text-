@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'hi.css' %}">
+
+	<style>
+		#my{
+			
+			background-color: rgb(21, 131, 125);
+			height: 260px;
+			width: 800px;	
+		}
+		#my p{
+			font-size: larger;
+			font-weight: 400;
+			color:white;
+		}
+		h1 h2{
+			color: blue;
+		}
+		body{
+			background-size: auto;
+			opacity: 1.5;
+			overflow: visible;
+			background-repeat:repeat;
+          background-image: url({% static 'img/ki.jpg' %});
+		  
+        }
+	</style>
+</head>
+<body>
+<center>
+    <h1 style="color:blue ;">ARABIC AUDIO TO TEXT</h1><hr>
+	<h2 style="color:blue ;">Transcribe Audio</h2>
+	
+    
+
+    <h2 id="my">
+	{% block content %}
+		
+		{% if error_msg %}
+			<p>{{ error_msg }}</p>
+		{% endif %}
+		{% if text %}
+		<p>	{{ text }}</p>
+		{% endif %}
+		{% if text2 %}
+		<p>	{{ text2 }}</p>
+		{% endif %}
+		{% if text3 %}
+		<p>	{{ text3 }}</p>
+		{% endif %}
+		{% endblock %}
+	</h2>
+		<form action="txtreg/" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<input type="file" name="audio_file">
+			<button type="submit">Transcribe Audio</button>
+		</form>
+	
+	
+
+
+
+    <button onclick="window.location.href='{% url 'vs2txt'%}' "> Speech to Text</a> </button> 
+</center>
+</body>
+</html>

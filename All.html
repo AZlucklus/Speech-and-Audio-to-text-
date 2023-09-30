@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATALLTEC</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js">
+
+    { % load gTTS %}
+</head>
+<body>
+    
+<div class="audio-controls">
+    <button id="rerord">Record</button>
+    <button id="stop">Stop</button>
+    <audio src="" id="audio" controls></audio>
+    <a href="{{ audio.audio.url}}">{{ audio.audio.url}}</a>
+</div>
+<div id="msg">Recoording...</div>
+<form  method="post" enctype="multipart/form-data">
+
+   
+
+    <div class="container">
+        <div class="form-group">
+            <select name="dlang"class="form-control " id="control">
+                <option value="en">&#128576 ENGLISH</option>
+                <option value="ar">&#128588 ARABIC</option>
+                <option value="ha">&#128598 HAUSA</option>
+                <option value="yo">&#128554 YORUBA</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select name="lang"class="form-control " id="control">
+                <option value="en">&#128576 ENGLISH</option>
+                <option value="ar">&#128588 ARABIC</option>
+                <option value="ha">&#128598 HAUSA</option>
+                <option value="yo">&#128554 YORUBA</option>
+            </select>
+        </div>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="cosfl" name="file" lang="es" id="">
+            <label for="cosfllg" class="custom-file-label"> Select Audio File.</label>
+        </div>
+        <center style="...">
+            <button type="submit" class="btn btn-warning">Translate</button>
+        </center>
+    </div>
+</form>
+ <div class="container" style="...">
+    <div class="inner" style="...">
+        <h1 style="...">Translated Text</h1>
+     
+        <h2 style="...">
+          
+        </h2>
+       
+    </div>
+    <div class="inner" style="...">
+        <h1 style="...">Translated Audio</h1>
+       
+      
+    </div>
+</div>
+</body>
+</html>

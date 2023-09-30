@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     {% load static %}
+     <link rel="stylesheet" href="{% static 'hi.css' %}">
+    <style>
+        h1{
+            
+            text-align: center;
+            color: blue
+        }
+        body{
+          background-image: url({% static 'img/ki2.jpg' %});
+        }
+      div{
+        width: 500px;
+        padding: 100px;
+        margin: 70px;
+      }
+      div button{
+        width: 200px;
+        height: 90px;
+        
+      }
+    </style>
+</head>
+<body id="hb">
+
+    <h1>ARABIC SPEECH & AUDIO TO TEXT </h1><hr>
+    <button onclick="window.location.href='{% url 'script' %}'"> Execute google</button><hr>
+   
+    {% if data %}
+    {{ data | safe }}
+    {% endif %}
+    <center>
+<div>
+    <button onclick="window.location.href='{% url 'vs2txt'%}' "> Speech to Text</a> </button> 
+    <button onclick="window.location.href='{% url 'txt2vs'%}' "> Audio to Speech</a> </button> 
+</div></center>
+</body>
+
+</html>

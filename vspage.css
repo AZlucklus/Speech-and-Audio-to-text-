@@ -1,0 +1,46 @@
+#top{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* position: absolute;
+    left: 60px; */
+}
+#his{
+    position: absolute;
+    right: 50px;
+    background-color:rgb(48, 48, 83) ;
+    color: whitesmoke;
+    width: 90px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+}
+#lg{
+    width: 90px;
+    height: 30px;
+}
+.choice{
+    /* position: absolute;
+    left: 50; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.sec{
+    height: 200px;
+
+    background-color: aliceblue;
+    margin: 0px 0px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
+
+    
+}
+body .sec{
+    margin: 0px 0px 0px 0px;
+    
+}
